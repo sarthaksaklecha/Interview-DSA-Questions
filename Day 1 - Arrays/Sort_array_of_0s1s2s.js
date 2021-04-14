@@ -7,6 +7,8 @@ const sortColorsBruteForce = (arr) => {
     return arr.sort((a,b)=>a-b)
 }
 
+console.log(sortColorsBruteForce([0,0,2,2,0]))
+
 // Better Approch
 // we iterate the array once and keep the count of
 // 0's, 1's and 2's in a hash map
@@ -17,17 +19,43 @@ const sortColorsBruteForce = (arr) => {
 // the hash map
 
 const sortColorsBetter = (arr) => {
+    let Hash = new Map();
+    //setting all values to zero initially
+    Hash.set(0,0);
+    Hash.set(1,0);
+    Hash.set(2,0);
+    for(let num of arr){
+        Hash.set(num,Hash.get(num)+1)
+    }
     
+    for(num in arr){
+        if(Hash.get(0)!==0){
+            arr[num] = 0;
+            // decreasing the respective value by 1 
+            // in the Map
+            Hash.set(0,Hash.get(0)-1);
+        }else if(Hash.get(1)!==0){
+            arr[num] = 1;
+            Hash.set(1,Hash.get(1)-1);
+        }else{
+            arr[num] = 2
+        }
+    }
+    
+    return arr
 }
+
+console.log(sortColorsBetter([0,0,2,2,0]))
+
 
 // Optimal Solution
 // We will use three pointers to solve this question, namely low, mid and high
 // In the end we want all the zeroes to the left of low, all the ones between 
 // low and mid and all the 2's after the high. 
-// the complexity will be O(n)
+// the complexity will be O(n) and Space O(1)
 
 const sortColors = (arr) => {
     let low=0,mid=0,high=arr.length-1;
     // Initially we keep the low and mid pointer in the beginning of the array
-
+    
 }
