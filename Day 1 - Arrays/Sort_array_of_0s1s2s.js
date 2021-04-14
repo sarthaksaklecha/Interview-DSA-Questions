@@ -7,7 +7,7 @@ const sortColorsBruteForce = (arr) => {
     return arr.sort((a,b)=>a-b)
 }
 
-console.log(sortColorsBruteForce([0,0,2,2,0]))
+console.log(sortColorsBruteForce([0,0,2,2,0,1,1,1]))
 
 // Better Approch
 // we iterate the array once and keep the count of
@@ -45,7 +45,7 @@ const sortColorsBetter = (arr) => {
     return arr
 }
 
-console.log(sortColorsBetter([0,0,2,2,0]))
+console.log(sortColorsBetter([0,0,2,2,0,1,1,1]))
 
 
 // Optimal Solution
@@ -54,8 +54,34 @@ console.log(sortColorsBetter([0,0,2,2,0]))
 // low and mid and all the 2's after the high. 
 // the complexity will be O(n) and Space O(1)
 
-const sortColors = (arr) => {
+const sortColorsBest = (arr) => {
     let low=0,mid=0,high=arr.length-1;
     // Initially we keep the low and mid pointer in the beginning of the array
-    
+    // we will stop the loop once the mid pointer crosses the high pointer
+    // mid will be our iterating pointer as well
+    while(high>=mid){
+        if(arr[mid]===0){
+            [arr[low],arr[mid]] = [arr[mid],arr[low]];
+            // we increase low as we want the 0's to be in the left of low
+            low++;
+            // IMPORTANT
+            // we have to increase mid here 
+            // if there is a 0 in the start of the array
+            // mid won't increase 
+            // take example of [0,0,2,2,0,1,1] to understand
+            mid++;
+        }else if(arr[mid]===1){
+            // we increase the mid only when we land on a 1
+            // as we want the 1's to reside between the low and the mid
+            mid++;
+        }else{
+            [arr[high],arr[mid]] = [arr[mid],arr[high]];
+            high--;
+            // we decrease the high because we  want the 2's 
+            // to be in the right of high
+        }
+    }
+    return arr
 }
+
+console.log(sortColorsBest([0,0,2,2,0,1,1,1]))
