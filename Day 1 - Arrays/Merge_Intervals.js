@@ -1,4 +1,6 @@
-//IMPORTANT - CAN BE CONFUSING AND IS TRICKIER THAN IT LOOKS
+// IMPORTANT - CAN BE CONFUSING AND IS TRICKIER THAN IT LOOKS
+// https://leetcode.com/problems/merge-intervals/
+
 // Brute Force 
 // first sort the arr
 // iterate the arr, with an extra arr that keeps
@@ -7,7 +9,27 @@
 // this takes nlogn for sorting, and n^2 sor iterating and checking in 
 // our other array
 
-//BEST APPROACH
+const mergeIntervalsBruteForce = (arr) => {
+    arr.sort((a,b)=>a[0]-b[0]);
+    let trackSubarr = [];
+    let pushed = false;
+    for(let subarr of arr){
+        for(let i=0;i<trackSubarr.length;i++){
+            let interval = trackSubarr[i];
+            // console.log(i,interval,subarr)
+            if(interval[0]<=subarr[0] && subarr[0]<=interval[1]){
+                trackSubarr[i] = [interval[0],subarr[1]>interval[1]?subarr[1]:interval[1]];
+                pushed = true;
+                // console.log('pushed')
+            }
+        }
+        if(!pushed) trackSubarr.push(subarr);
+        pushed = false;
+    }
+    return trackSubarr
+}
+
+// BEST APPROACH
 // time = O(n), space = O(n)
 const mergeIntervalsBest = (arr) => {
     // first if the intervals are not sorted we
@@ -37,4 +59,4 @@ const mergeIntervalsBest = (arr) => {
     result.push(curr);
     return result;
 }
-console.log(mergeIntervals([[1,3],[2,6],[8,10],[15,18]]))
+console.log(mergeIntervalsBest([[1,3],[2,6],[8,10],[15,18]]), mergeIntervalsBruteForce([[1,3],[2,6],[8,10],[15,18]]))
