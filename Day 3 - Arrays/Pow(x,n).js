@@ -10,7 +10,7 @@ const pow = (x,n) => {
 }
 console.log(pow(2,4))
 
-// Optimal solution
+// Better
 // memoization and 
 //          2^7
 //         /  \
@@ -28,7 +28,7 @@ const powBetter = (x,n,memo={}) => {
 }
 console.log(powBest(2,4))
 
-// Alternate solution
+// Best solution
 // 2^6 = (2^2)^2 = 4^3
 // 3^5 = 3*3^4
 // 4^8 = (4^2)^4 = 16^4
