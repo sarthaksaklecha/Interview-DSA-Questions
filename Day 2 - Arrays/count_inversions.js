@@ -39,7 +39,7 @@ function inversionCount(arr){
         let p3 = low; // for the temporary array
         // console.log(low,mid,high)
         while(p1<=mid && p2<=high){
-            if(arr[p1]>arr[p2]){
+            if(arr[p1]>=arr[p2]){
                 // everything ahead of p1 will also make a
                 // pair as it they are greater than arr[p1]
                 inv_count += mid-p1+1;
