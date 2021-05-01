@@ -66,3 +66,4 @@ const findDuplicateNumber = (arr) => {
 console.log(findDuplicateNumberBrute([1,3,2,4,5,3])) //3
 console.log(findDuplicateNumberBetter([3,3,4,2,1])) //3
 console.log(findDuplicateNumber([5,3,4,2,1,6,4])) //4
+
