@@ -35,8 +35,14 @@ const mergeTwoListsBruteForce = (l1,l2) => {
     }
     return mergedListHead.next
 }
+
 // better
 // using merge two sorted array method 
+// smaller value in the first list and
+// larger in the second, then merge l1 and l2
+// not good as we are not taking advantage of it being a linked list
+// we can cross join the nodes from both the lists which could
+// not happen in an array
 
 
 // best (no extra space)
