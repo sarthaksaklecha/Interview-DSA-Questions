@@ -1,5 +1,6 @@
 // Brute Force
 // just merge the arrays and use any sorting technique 
+// interviewer gonna kill me after this LoL
 
 const MergeSortedArraysBruteForce = (arr1, arr2) => {
     return [...arr1,...arr2].sort((a,b)=>a-b)
@@ -44,6 +45,7 @@ console.log(MergeSortedArraysBetter([1,2,3,4,5],[2,5,6,7,9]))
 // first array and all the large numbers to be in the second array
 // In the end we will simply return the concat of both arrays
 // we will use insertion sort in the process
+// Note : insertion sort can be a little tricky
 
 const MergeSortedArraysBetter2 = (arr1,arr2) => {
     // we will only need 1 pointer

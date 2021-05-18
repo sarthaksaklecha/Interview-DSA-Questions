@@ -6,7 +6,7 @@
 // iterate the arr, with an extra arr that keeps
 // track of the intervals, in every iteration we check if
 // the subarr is merging with any of the subarr in our other arr
-// this takes nlogn for sorting, and n^2 sor iterating and checking in 
+// this takes nlogn for sorting, and n^2 for iterating and checking in 
 // our other array
 
 const mergeIntervalsBruteForce = (arr) => {

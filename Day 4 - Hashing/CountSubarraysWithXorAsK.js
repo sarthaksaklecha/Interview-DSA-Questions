@@ -19,6 +19,8 @@
 // will also exist
  
 // Q3
+// [2, 3, 1, 3, 4, 2, 2]
+//  2  5  6  9  13 15 17
 var subarraySum = function(nums, k) {
     let memo = {};
     let sum = 0;
@@ -55,6 +57,10 @@ var xorQueries = function(arr, queries) {
 // IMPORTANT: always use brackets while using ^
 // the answer chamges without brackets
 // weird js
+// a = b^k
+// a^k = b
+//  ----a-----
+//  --b-|---k-
 
 let CountSubarraysWithXorAsK = (arr,k) => {
     let memo = {};
