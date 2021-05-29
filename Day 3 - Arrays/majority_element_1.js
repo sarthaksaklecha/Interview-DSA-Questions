@@ -46,6 +46,7 @@ var majorityElementBest = (nums) => {
     for(num of nums){
         if(num===currMax){
             count++;
+            // code block below is not needed unless we're told to calculate maxCount
             if(count>maxCount){
                 currMax = num;
                 maxCount = count;

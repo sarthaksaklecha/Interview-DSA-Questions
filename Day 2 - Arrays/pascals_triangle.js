@@ -5,7 +5,7 @@
 // but if you only have to print a particular row
 // then go for the "best"
 
-// Brute Force (kaafi intuitive and easy to understand)
+// Brute Force (very intuitive and easy to understand)
 // print rows one by one
 // use the last computed row to calculate
 // the elements in the next row using pasccal's triangle's

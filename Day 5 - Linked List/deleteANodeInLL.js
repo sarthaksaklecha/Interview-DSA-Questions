@@ -16,4 +16,4 @@ var deleteNode = (node) => {
     }
     node.val = node.next.val
     node.next = null;
-}
+};

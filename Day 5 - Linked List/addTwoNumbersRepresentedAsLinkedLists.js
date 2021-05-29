@@ -33,7 +33,7 @@ const addTwoNumbersBruteForce = (l1,l2) => {
 }
 
 // Best
-// 1 pointer at the start of each linked list
+// 1 pointer at the start of both the linked lists
 // keep a variable carry to handle carry-overs
 
 var addTwoNumbers = function(l1, l2) {

@@ -89,6 +89,8 @@ console.log(search2DmatrixBestGFG([[1,3,5,7],[10,11,16,20],[23,30,34,60]],3));
 // ]
 const search2DmatrixBestLeetcode = (matrix,searchElement) => {
     // IMPORTANT
+    // Binary Search in the whole matrix at once;
+    // as the rows and columns both are sorted;
     // To get the row and column number from the 
     // index (written below the elements)
     // for eg : getting (1,2) from index 6
@@ -104,6 +106,7 @@ const search2DmatrixBestLeetcode = (matrix,searchElement) => {
         mid = Math.floor((start+end)/2);
         let row = Math.floor(mid/NumberOfElementsInRow);
         let col = mid%NumberOfElementsInRow;
+
         // console.log(matrix[row][col])
         if(searchElement === matrix[row][col]){
             return true;

@@ -48,7 +48,7 @@ function reversePairs(arr){
         }
         // merging two sorted arrays using extra space
         // we can do it in no space but the time complexity 
-        // will increase, so we have two sacrifice one or the other
+        // will increase, so we have to sacrifice one or the other
         p1=low;
         p2=mid+1;
         let p3=low;

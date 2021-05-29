@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
+// very important see leetcode solution best
+// see java solution for most optimal approach
 
 // Brute Force 
 // 2 for loops and a hashmap 

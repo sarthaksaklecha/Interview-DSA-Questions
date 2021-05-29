@@ -5,7 +5,7 @@
 // O(nlogn+n)
 // sort the array and count the longest sequence
 // here we have to keep in mind that we skip duplicate values
-// Also the last check before returning is also pretty important
+// EDGE CASE: Also the last check before returning is also pretty important
 
 const longestConsecutive = (nums) =>{
     if(!nums.length) return 0
@@ -30,7 +30,7 @@ const longestConsecutive = (nums) =>{
 }
 
 // Best
-// approx time = O(n);
+// time = O(n^2);
 // we use a hashmap smartly
 
 var longestConsecutive = function(nums) {

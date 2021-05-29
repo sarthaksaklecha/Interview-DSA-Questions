@@ -5,7 +5,7 @@
 // one array represents row and other column
 // traverse the matrix and if you find a zero
 // set the respect element in row and column index as 0
-// traverse again and change value to zero is rowArr[i] || colArr[j] is 0;
+// traverse again and change value to zero if rowArr[i] || colArr[j] is 0;
 // time complexity = O(m*n);
 // space = O(m+n)
 

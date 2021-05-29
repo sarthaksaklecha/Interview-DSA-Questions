@@ -52,7 +52,7 @@ console.log(sortColorsBetter([0,0,2,2,0,1,1,1]))
 
 // Optimal Solution
 // We will use three pointers to solve this question, namely low, mid and high
-// In the end we want all the zeroes to the left of low, all the ones between 
+// In the end we want all the zeroes to be in the left of low, all the ones between 
 // low and mid and all the 2's after the high. 
 // the complexity will be O(n) and Space O(1)
 

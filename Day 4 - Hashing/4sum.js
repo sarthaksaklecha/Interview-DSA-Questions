@@ -10,6 +10,7 @@ const fourSumBruteForce = (nums,target) => {
     for(let i=0;i<nums.length;i++){
         for(let j=i+1;j<nums.length;j++){
             memo = {}
+            // 2sum on the rest of the array
             for(let k=j+1;k<nums.length;k++){
                 if(target-nums[i]-nums[j]-nums[k] in memo) result[[nums[i],nums[j],nums[k],target-nums[i]-nums[j]-nums[k]].sort((a,b) => a-b)] = true;
                 memo[nums[k]] = true;
