@@ -7,7 +7,7 @@
 // for that we will create a datastructure that will store objects of meeting class having end and start properties
 // then we will sort that data structure by making a Comparator which will compare according to the end time 
 // of the meetings
-// In the end we calculate the number of meetings by checking if the start time of the meeting is grreater 
+// In the end we calculate the number of meetings by checking if the start time of the meeting is greater 
 // than the end time of the previous meeting
 
 // place meeting class outside of the SOlution class or OOPJ will throw errors lol
