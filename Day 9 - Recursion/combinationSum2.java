@@ -1,6 +1,11 @@
 // https://leetcode.com/problems/combination-sum-ii/
 
 // Brute Force Solution
+// pick or not pick approach
+// we either pick or not pick the number to create a sum
+// we maintain a ds which has the current combination
+// if the sum == target we add the combination to a set to store unique 
+// combinations only
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Set<List<Integer>> result = new HashSet<List<Integer>>();
@@ -30,6 +35,13 @@ class Solution {
 }
 
 // Best Solution
+// we create all possible subsets
+// [1,2,3,4,5]
+
+//                                    []
+//    [1]                        [2]                  [3]            [4]       [5]
+// [1,2] [1,3] [1,4] [1,5]    [2,3] [2,4] [2,5] 
+
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
