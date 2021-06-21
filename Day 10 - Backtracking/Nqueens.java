@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/n-queens/
 
 // Best
+// try all possible combinations using recursion
 class Solution {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<List<String>>();
