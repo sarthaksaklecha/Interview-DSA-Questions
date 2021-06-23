@@ -1,5 +1,7 @@
-// Very Important
-
+// https://leetcode.com/problems/sudoku-solver/
+ Very Important
+// check all posibilities, fill each space with all possible numbers that are not breaking the rules of sudoku
+// IMPORTANT BACKTRACKING PART
 class Solution {
     public void solveSudoku(char[][] board) {
         // check every possiblity for every empty space
@@ -16,19 +18,25 @@ class Solution {
                 i++;j=0;
             }
         }
+        // if we have filled all the spaces // base case
         if(i==board.length){
             return true;
         };
         for(char possibleNumber : allPossibilities(board,i,j)){
             board[i][j] = possibleNumber;
             if(helper(board,i,j)){
+                // we return true only when the board has been solved (base case)
+                // now we have to preserve this board 
                 return true;
             }else{
+                // we do this only when the board couldn't complete because of wrong choices
+                // we clear the board when we backtrack after a false return until we reach the top stack of the recursion
                 board[i][j] = '.';
             }
         };
         return false;
     }
+    // function to return a list of possible numbers at a given space in sudoku
     public List<Character> allPossibilities(char[][] board, int row, int col){
         List<Character> result = new ArrayList<Character>(Arrays.asList('1','2','3','4','5','6','7','8','9'));
         // Boolean[] isPossible = new Boolean[board.length+1]; // 0-9 -> 0 will be blank
