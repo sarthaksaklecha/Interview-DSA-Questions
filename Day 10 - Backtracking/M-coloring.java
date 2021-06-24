@@ -8,7 +8,7 @@ class solve
     {
         // Your code here
         // G is edges adjacency list, indexed from 0, each index represents a vertex
-        // and the list of integers reperesents the vertices connected to that vertex
+        // and the list of integers at that index reperesents the vertices connected to that vertex
         // color is an array(size=no.of vertices) of zeroes, for storing the color of the vertices
         // C is M ( number of colors )
         // i is the index we are coloring
