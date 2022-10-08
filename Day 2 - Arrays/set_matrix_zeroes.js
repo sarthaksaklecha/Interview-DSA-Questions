@@ -42,44 +42,43 @@ console.log(setZeroes([[1,1,1],[1,0,1],[1,1,1]]))
 // time = O(m*n);
 // space = constant 
 
+/** STEPS
+* 1. Declare 2 variables which will store whether the first row or col is zero
+* 2. Traverse the matrix skipping the 0th row and 0th column and set the values in the first row and columns for elements with value 0
+* 3. Now traverse the matrix backwards and set 0 at places where the first row/col has zeroes SKIPPING THE FIRST ROW AND COL
+* 4. set forst row and col using the flags initialized in the start.
+*/
 
-const setZeroes = (mat) => {
-    let isRow = false;
-    let isCol = false;
-    let i,j;
-    //check first row and column
-    for(i of mat[0]){
-        if(element===0) isRow=true;
+var setZeroes = function(matrix) {
+    let isRowZero = false;
+    let isColZero = false;
+    for(let i in matrix) {
+        if(matrix[i][0] ===0) isColZero = true;
     }
-    for(j of mat){
-        if(j[0]===0) isCol=true;
+    for(let j in matrix[0]) {
+        if(matrix[0][j] ===0) isRowZero = true;
     }
-    // traverse and mark in the first row or col
-    for(i=0;i<mat.length;i++){
-        for(j=0;j<mat[0].length;j++){
-            if(mat[i][j]===0){
-                mat[0][j] = 0;
-                mat[i][0] = 0;
+    for(let i in matrix){
+        for (let j in matrix[0]){
+                if (matrix[i][j] === 0 && i!==0 && j!==0){
+                matrix[0][j] = 0;
+                matrix[i][0] = 0;
+            
             }
         }
     }
-    // traverse again to set zero
-    // IMP : skip first row and col
-    for(i=1;i<mat.length;i++){
-        for(j=1;j<mat[0].length;j++){
-            if(mat[i][0]===0 || mat[0][j]===0) mat[i][j] = 0;
+    
+    for (let i=matrix.length-1;i>=1;i--) {
+        for (let j= matrix[0].length-1;j>=1;j--) {
+            if(matrix[i][0] ===0 || matrix[0][j] ===0) 
+                matrix[i][j] = 0
         }
     }
+ for (let i in matrix) {
+        if(isColZero) matrix[i][0] =0
+    }
+for (let j in matrix[0]) {
+        if(isRowZero) matrix[0][j] = 0
+    }
     
-    // set first row and col
-    if(isRow){
-        for(i=0;i<mat[0].length;i++){
-            mat[0][i] = 0
-        }  
-    }
-    if(isCol){
-        for(i=0;i<mat.length;i++){
-            mat[i][0] = 0
-        }  
-    }
-}
+};
